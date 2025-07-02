@@ -1287,6 +1287,632 @@
         ,
 #endif
 
+#if (NUM_USB_CHAN_OUT > 33-1)
+    .outputChanStr_33          = ""
+    #if (33 < I2S_CHANS_DAC+1)
+        "Analogue 33"
+    #endif
+    #if ((33 < SPDIF_TX_INDEX+2+1) && (33 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (33 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(33 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(33 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((33 < ADAT_TX_INDEX+8+1) && (33 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((33 < SPDIF_TX_INDEX+2+1) && (33 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (33 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(33 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(33 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(33 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(33 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(33 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(33 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(33 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(33 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 34-1)
+    .outputChanStr_34          = ""
+    #if (34 < I2S_CHANS_DAC+1)
+        "Analogue 34"
+    #endif
+    #if ((34 < SPDIF_TX_INDEX+2+1) && (34 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (34 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(34 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(34 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((34 < ADAT_TX_INDEX+8+1) && (34 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((34 < SPDIF_TX_INDEX+2+1) && (34 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (34 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(34 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(34 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(34 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(34 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(34 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(34 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(34 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(34 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 35-1)
+    .outputChanStr_35          = ""
+    #if (35 < I2S_CHANS_DAC+1)
+        "Analogue 35"
+    #endif
+    #if ((35 < SPDIF_TX_INDEX+2+1) && (35 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (35 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(35 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(35 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((35 < ADAT_TX_INDEX+8+1) && (35 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((35 < SPDIF_TX_INDEX+2+1) && (35 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (35 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(35 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(35 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(35 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(35 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(35 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(35 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(35 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(35 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 36-1)
+    .outputChanStr_36          = ""
+    #if (36 < I2S_CHANS_DAC+1)
+        "Analogue 36"
+    #endif
+    #if ((36 < SPDIF_TX_INDEX+2+1) && (36 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (36 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(36 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(36 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((36 < ADAT_TX_INDEX+8+1) && (36 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((36 < SPDIF_TX_INDEX+2+1) && (36 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (36 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(36 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(36 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(36 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(36 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(36 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(36 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(36 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(36 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 37-1)
+    .outputChanStr_37          = ""
+    #if (37 < I2S_CHANS_DAC+1)
+        "Analogue 37"
+    #endif
+    #if ((37 < SPDIF_TX_INDEX+2+1) && (37 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (37 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(37 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(37 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((37 < ADAT_TX_INDEX+8+1) && (37 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((37 < SPDIF_TX_INDEX+2+1) && (37 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (37 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(37 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(37 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(37 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(37 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(37 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(37 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(37 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(37 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 38-1)
+    .outputChanStr_38          = ""
+    #if (38 < I2S_CHANS_DAC+1)
+        "Analogue 38"
+    #endif
+    #if ((38 < SPDIF_TX_INDEX+2+1) && (38 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (38 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(38 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(38 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((38 < ADAT_TX_INDEX+8+1) && (38 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((38 < SPDIF_TX_INDEX+2+1) && (38 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (38 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(38 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(38 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(38 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(38 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(38 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(38 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(38 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(38 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 39-1)
+    .outputChanStr_39          = ""
+    #if (39 < I2S_CHANS_DAC+1)
+        "Analogue 39"
+    #endif
+    #if ((39 < SPDIF_TX_INDEX+2+1) && (39 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (39 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(39 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(39 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((39 < ADAT_TX_INDEX+8+1) && (39 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((39 < SPDIF_TX_INDEX+2+1) && (39 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (39 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(39 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(39 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(39 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(39 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(39 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(39 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(39 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(39 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 40-1)
+    .outputChanStr_40          = ""
+    #if (40 < I2S_CHANS_DAC+1)
+        "Analogue 40"
+    #endif
+    #if ((40 < SPDIF_TX_INDEX+2+1) && (40 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (40 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(40 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(40 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((40 < ADAT_TX_INDEX+8+1) && (40 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((40 < SPDIF_TX_INDEX+2+1) && (40 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (40 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(40 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(40 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(40 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(40 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(40 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(40 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(40 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(40 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 41-1)
+    .outputChanStr_41          = ""
+    #if (41 < I2S_CHANS_DAC+1)
+        "Analogue 41"
+    #endif
+    #if ((41 < SPDIF_TX_INDEX+2+1) && (41 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (41 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(41 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(41 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((41 < ADAT_TX_INDEX+8+1) && (41 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((41 < SPDIF_TX_INDEX+2+1) && (41 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (41 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(41 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(41 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(41 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(41 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(41 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(41 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(41 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(41 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 42-1)
+    .outputChanStr_42          = ""
+    #if (42 < I2S_CHANS_DAC+1)
+        "Analogue 42"
+    #endif
+    #if ((42 < SPDIF_TX_INDEX+2+1) && (42 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (42 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(42 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(42 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((42 < ADAT_TX_INDEX+8+1) && (42 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((42 < SPDIF_TX_INDEX+2+1) && (42 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (42 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(42 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(42 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(42 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(42 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(42 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(42 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(42 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(42 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 43-1)
+    .outputChanStr_43          = ""
+    #if (43 < I2S_CHANS_DAC+1)
+        "Analogue 43"
+    #endif
+    #if ((43 < SPDIF_TX_INDEX+2+1) && (43 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (43 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(43 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(43 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((43 < ADAT_TX_INDEX+8+1) && (43 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((43 < SPDIF_TX_INDEX+2+1) && (43 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (43 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(43 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(43 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(43 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(43 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(43 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(43 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(43 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(43 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 44-1)
+    .outputChanStr_44          = ""
+    #if (44 < I2S_CHANS_DAC+1)
+        "Analogue 44"
+    #endif
+    #if ((44 < SPDIF_TX_INDEX+2+1) && (44 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (44 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(44 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(44 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((44 < ADAT_TX_INDEX+8+1) && (44 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((44 < SPDIF_TX_INDEX+2+1) && (44 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (44 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(44 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(44 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(44 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(44 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(44 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(44 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(44 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(44 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 45-1)
+    .outputChanStr_45          = ""
+    #if (45 < I2S_CHANS_DAC+1)
+        "Analogue 45"
+    #endif
+    #if ((45 < SPDIF_TX_INDEX+2+1) && (45 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (45 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(45 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(45 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((45 < ADAT_TX_INDEX+8+1) && (45 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((45 < SPDIF_TX_INDEX+2+1) && (45 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (45 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(45 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(45 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(45 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(45 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(45 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(45 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(45 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(45 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 46-1)
+    .outputChanStr_46          = ""
+    #if (46 < I2S_CHANS_DAC+1)
+        "Analogue 46"
+    #endif
+    #if ((46 < SPDIF_TX_INDEX+2+1) && (46 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (46 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(46 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(46 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((46 < ADAT_TX_INDEX+8+1) && (46 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((46 < SPDIF_TX_INDEX+2+1) && (46 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (46 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(46 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(46 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(46 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(46 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(46 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(46 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(46 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(46 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 47-1)
+    .outputChanStr_47          = ""
+    #if (47 < I2S_CHANS_DAC+1)
+        "Analogue 47"
+    #endif
+    #if ((47 < SPDIF_TX_INDEX+2+1) && (47 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (47 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(47 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(47 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((47 < ADAT_TX_INDEX+8+1) && (47 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((47 < SPDIF_TX_INDEX+2+1) && (47 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (47 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(47 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(47 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(47 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(47 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(47 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(47 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(47 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(47 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_OUT > 48-1)
+    .outputChanStr_48          = ""
+    #if (48 < I2S_CHANS_DAC+1)
+        "Analogue 48"
+    #endif
+    #if ((48 < SPDIF_TX_INDEX+2+1) && (48 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN)
+        #if (48 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(48 - SPDIF_TX_INDEX == 1)
+            "SPDIF 1"
+        #elif(48 - SPDIF_TX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((48 < ADAT_TX_INDEX+8+1) && (48 > ADAT_TX_INDEX)) && (XUA_ADAT_TX_EN)
+        #if ((48 < SPDIF_TX_INDEX+2+1) && (48 > SPDIF_TX_INDEX)) && (XUA_SPDIF_TX_EN) || (48 < I2S_CHANS_DAC+1)
+        "/"
+        #endif
+        #if(48 - ADAT_TX_INDEX == 1)
+            "ADAT 1"
+        #elif(48 - ADAT_TX_INDEX == 2)
+            "ADAT 2"
+        #elif(48 - ADAT_TX_INDEX == 3)
+            "ADAT 3"
+        #elif(48 - ADAT_TX_INDEX == 4)
+            "ADAT 4"
+        #elif(48 - ADAT_TX_INDEX == 5)
+            "ADAT 5"
+        #elif(48 - ADAT_TX_INDEX == 6)
+            "ADAT 6"
+        #elif(48 - ADAT_TX_INDEX == 7)
+            "ADAT 7"
+        #elif(48 - ADAT_TX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+
 /* Input Strings */
 
 
@@ -2570,3 +3196,641 @@
         ,
 #endif
 
+#if (NUM_USB_CHAN_IN > 33-1)
+    .inputChanStr_33          = ""
+    #if (33 < I2S_CHANS_ADC+1)
+        "Analogue 33"
+    #endif
+    #if ((33 < SPDIF_RX_INDEX+2+1) && (33 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (33 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(33 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(33 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((33 < ADAT_RX_INDEX+8+1) && (33 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((33 < SPDIF_RX_INDEX+2+1) && (33 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (33 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(33 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(33 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(33 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(33 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(33 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(33 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(33 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(33 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 34-1)
+    .inputChanStr_34          = ""
+    #if (34 < I2S_CHANS_ADC+1)
+        "Analogue 34"
+    #endif
+    #if ((34 < SPDIF_RX_INDEX+2+1) && (34 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (34 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(34 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(34 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((34 < ADAT_RX_INDEX+8+1) && (34 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((34 < SPDIF_RX_INDEX+2+1) && (34 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (34 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(34 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(34 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(34 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(34 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(34 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(34 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(34 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(34 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 35-1)
+    .inputChanStr_35          = ""
+    #if (35 < I2S_CHANS_ADC+1)
+        "Analogue 35"
+    #endif
+    #if ((35 < SPDIF_RX_INDEX+2+1) && (35 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (35 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(35 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(35 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((35 < ADAT_RX_INDEX+8+1) && (35 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((35 < SPDIF_RX_INDEX+2+1) && (35 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (35 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(35 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(35 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(35 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(35 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(35 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(35 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(35 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(35 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 36-1)
+    .inputChanStr_36          = ""
+    #if (36 < I2S_CHANS_ADC+1)
+        "Analogue 36"
+    #endif
+    #if ((36 < SPDIF_RX_INDEX+2+1) && (36 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (36 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(36 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(36 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((36 < ADAT_RX_INDEX+8+1) && (36 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((36 < SPDIF_RX_INDEX+2+1) && (36 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (36 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(36 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(36 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(36 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(36 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(36 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(36 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(36 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(36 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 37-1)
+    .inputChanStr_37          = ""
+    #if (37 < I2S_CHANS_ADC+1)
+        "Analogue 37"
+    #endif
+    #if ((37 < SPDIF_RX_INDEX+2+1) && (37 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (37 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(37 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(37 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((37 < ADAT_RX_INDEX+8+1) && (37 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((37 < SPDIF_RX_INDEX+2+1) && (37 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (37 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(37 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(37 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(37 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(37 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(37 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(37 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(37 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(37 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 38-1)
+    .inputChanStr_38          = ""
+    #if (38 < I2S_CHANS_ADC+1)
+        "Analogue 38"
+    #endif
+    #if ((38 < SPDIF_RX_INDEX+2+1) && (38 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (38 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(38 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(38 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((38 < ADAT_RX_INDEX+8+1) && (38 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((38 < SPDIF_RX_INDEX+2+1) && (38 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (38 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(38 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(38 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(38 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(38 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(38 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(38 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(38 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(38 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 39-1)
+    .inputChanStr_39          = ""
+    #if (39 < I2S_CHANS_ADC+1)
+        "Analogue 39"
+    #endif
+    #if ((39 < SPDIF_RX_INDEX+2+1) && (39 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (39 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(39 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(39 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((39 < ADAT_RX_INDEX+8+1) && (39 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((39 < SPDIF_RX_INDEX+2+1) && (39 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (39 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(39 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(39 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(39 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(39 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(39 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(39 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(39 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(39 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 40-1)
+    .inputChanStr_40          = ""
+    #if (40 < I2S_CHANS_ADC+1)
+        "Analogue 40"
+    #endif
+    #if ((40 < SPDIF_RX_INDEX+2+1) && (40 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (40 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(40 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(40 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((40 < ADAT_RX_INDEX+8+1) && (40 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((40 < SPDIF_RX_INDEX+2+1) && (40 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (40 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(40 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(40 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(40 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(40 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(40 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(40 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(40 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(40 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 41-1)
+    .inputChanStr_41          = ""
+    #if (41 < I2S_CHANS_ADC+1)
+        "Analogue 41"
+    #endif
+    #if ((41 < SPDIF_RX_INDEX+2+1) && (41 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (41 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(41 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(41 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((41 < ADAT_RX_INDEX+8+1) && (41 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((41 < SPDIF_RX_INDEX+2+1) && (41 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (41 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(41 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(41 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(41 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(41 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(41 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(41 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(41 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(41 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 42-1)
+    .inputChanStr_42          = ""
+    #if (42 < I2S_CHANS_ADC+1)
+        "Analogue 42"
+    #endif
+    #if ((42 < SPDIF_RX_INDEX+2+1) && (42 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (42 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(42 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(42 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((42 < ADAT_RX_INDEX+8+1) && (42 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((42 < SPDIF_RX_INDEX+2+1) && (42 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (42 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(42 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(42 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(42 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(42 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(42 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(42 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(42 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(42 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 43-1)
+    .inputChanStr_43          = ""
+    #if (43 < I2S_CHANS_ADC+1)
+        "Analogue 43"
+    #endif
+    #if ((43 < SPDIF_RX_INDEX+2+1) && (43 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (43 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(43 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(43 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((43 < ADAT_RX_INDEX+8+1) && (43 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((43 < SPDIF_RX_INDEX+2+1) && (43 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (43 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(43 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(43 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(43 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(43 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(43 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(43 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(43 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(43 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 44-1)
+    .inputChanStr_44          = ""
+    #if (44 < I2S_CHANS_ADC+1)
+        "Analogue 44"
+    #endif
+    #if ((44 < SPDIF_RX_INDEX+2+1) && (44 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (44 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(44 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(44 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((44 < ADAT_RX_INDEX+8+1) && (44 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((44 < SPDIF_RX_INDEX+2+1) && (44 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (44 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(44 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(44 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(44 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(44 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(44 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(44 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(44 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(44 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 45-1)
+    .inputChanStr_45          = ""
+    #if (45 < I2S_CHANS_ADC+1)
+        "Analogue 45"
+    #endif
+    #if ((45 < SPDIF_RX_INDEX+2+1) && (45 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (45 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(45 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(45 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((45 < ADAT_RX_INDEX+8+1) && (45 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((45 < SPDIF_RX_INDEX+2+1) && (45 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (45 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(45 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(45 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(45 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(45 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(45 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(45 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(45 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(45 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 46-1)
+    .inputChanStr_46          = ""
+    #if (46 < I2S_CHANS_ADC+1)
+        "Analogue 46"
+    #endif
+    #if ((46 < SPDIF_RX_INDEX+2+1) && (46 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (46 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(46 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(46 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((46 < ADAT_RX_INDEX+8+1) && (46 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((46 < SPDIF_RX_INDEX+2+1) && (46 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (46 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(46 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(46 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(46 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(46 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(46 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(46 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(46 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(46 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+
+#if (NUM_USB_CHAN_IN > 47-1)
+    .inputChanStr_47          = ""
+    #if (47 < I2S_CHANS_ADC+1)
+        "Analogue 47"
+    #endif
+    #if ((47 < SPDIF_RX_INDEX+2+1) && (47 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (47 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(47 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(47 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((47 < ADAT_RX_INDEX+8+1) && (47 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((47 < SPDIF_RX_INDEX+2+1) && (47 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (47 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(47 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(47 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(47 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(47 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(47 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(47 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(47 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(47 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
+#if (NUM_USB_CHAN_IN > 48-1)
+    .inputChanStr_48          = ""
+    #if (48 < I2S_CHANS_ADC+1)
+        "Analogue 48"
+    #endif
+    #if ((48 < SPDIF_RX_INDEX+2+1) && (48 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN)
+        #if (48 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(48 - SPDIF_RX_INDEX == 1)
+            "SPDIF 1"
+        #elif(48 - SPDIF_RX_INDEX == 2)
+            "SPDIF 2"
+        #endif
+    #endif
+    #if ((48 < ADAT_RX_INDEX+8+1) && (48 > ADAT_RX_INDEX)) && (XUA_ADAT_RX_EN)
+        #if ((48 < SPDIF_RX_INDEX+2+1) && (48 > SPDIF_RX_INDEX)) && (XUA_SPDIF_RX_EN) || (48 < I2S_CHANS_ADC+1)
+        "/"
+        #endif
+        #if(48 - ADAT_RX_INDEX == 1)
+            "ADAT 1"
+        #elif(48 - ADAT_RX_INDEX == 2)
+            "ADAT 2"
+        #elif(48 - ADAT_RX_INDEX == 3)
+            "ADAT 3"
+        #elif(48 - ADAT_RX_INDEX == 4)
+            "ADAT 4"
+        #elif(48 - ADAT_RX_INDEX == 5)
+            "ADAT 5"
+        #elif(48 - ADAT_RX_INDEX == 6)
+            "ADAT 6"
+        #elif(48 - ADAT_RX_INDEX == 7)
+            "ADAT 7"
+        #elif(48 - ADAT_RX_INDEX == 8)
+            "ADAT 8"
+        #endif
+     #endif
+        ,
+#endif
