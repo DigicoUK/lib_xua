@@ -861,11 +861,7 @@
  *
  */
 #ifndef HS_STREAM_FORMAT_OUTPUT_1_SUBSLOT_BYTES
-    #if (HS_STREAM_FORMAT_OUTPUT_1_RESOLUTION_BITS == 24)
-        #define HS_STREAM_FORMAT_OUTPUT_1_SUBSLOT_BYTES        4 /* 4 byte subslot is nicer for our 32 bit machine to unpack.. */
-    #else
-        #define HS_STREAM_FORMAT_OUTPUT_1_SUBSLOT_BYTES        (HS_STREAM_FORMAT_OUTPUT_1_RESOLUTION_BITS/8)
-    #endif
+    #define HS_STREAM_FORMAT_OUTPUT_1_SUBSLOT_BYTES        (HS_STREAM_FORMAT_OUTPUT_1_RESOLUTION_BITS/8)
 #endif
 
 /**
@@ -878,11 +874,7 @@
  *
  */
 #ifndef HS_STREAM_FORMAT_OUTPUT_2_SUBSLOT_BYTES
-    #if (HS_STREAM_FORMAT_OUTPUT_2_RESOLUTION_BITS == 24)
-        #define HS_STREAM_FORMAT_OUTPUT_2_SUBSLOT_BYTES        4 /* 4 byte subslot is nicer for our 32 bit machine to unpack.. */
-    #else
-        #define HS_STREAM_FORMAT_OUTPUT_2_SUBSLOT_BYTES        (HS_STREAM_FORMAT_OUTPUT_2_RESOLUTION_BITS/8)
-    #endif
+    #define HS_STREAM_FORMAT_OUTPUT_2_SUBSLOT_BYTES        (HS_STREAM_FORMAT_OUTPUT_2_RESOLUTION_BITS/8)
 #endif
 
 /**
@@ -895,11 +887,7 @@
  *
  */
 #ifndef HS_STREAM_FORMAT_OUTPUT_3_SUBSLOT_BYTES
-    #if (HS_STREAM_FORMAT_OUTPUT_3_RESOLUTION_BITS == 24)
-        #define HS_STREAM_FORMAT_OUTPUT_3_SUBSLOT_BYTES        4 /* 4 byte subslot is nicer for our 32 bit machine to unpack.. */
-    #else
-        #define HS_STREAM_FORMAT_OUTPUT_3_SUBSLOT_BYTES        (HS_STREAM_FORMAT_OUTPUT_3_RESOLUTION_BITS/8)
-    #endif
+    #define HS_STREAM_FORMAT_OUTPUT_3_SUBSLOT_BYTES        (HS_STREAM_FORMAT_OUTPUT_3_RESOLUTION_BITS/8)
 #endif
 
 /* Default sub-slot sizes for full-speed operation */
@@ -1075,27 +1063,15 @@
  *
  */
 #ifndef HS_STREAM_FORMAT_INPUT_1_SUBSLOT_BYTES
-     #if (HS_STREAM_FORMAT_INPUT_1_RESOLUTION_BITS == 24)
-        #define HS_STREAM_FORMAT_INPUT_1_SUBSLOT_BYTES      4 /* 4 byte subslot is nicer for our 32 bit machine to unpack.. */
-    #else
-        #define HS_STREAM_FORMAT_INPUT_1_SUBSLOT_BYTES      (HS_STREAM_FORMAT_INPUT_1_RESOLUTION_BITS/8)
-    #endif
+    #define HS_STREAM_FORMAT_INPUT_1_SUBSLOT_BYTES      (HS_STREAM_FORMAT_INPUT_1_RESOLUTION_BITS/8)
 #endif
 
 #ifndef HS_STREAM_FORMAT_INPUT_2_SUBSLOT_BYTES
-     #if (HS_STREAM_FORMAT_INPUT_2_RESOLUTION_BITS == 24)
-        #define HS_STREAM_FORMAT_INPUT_2_SUBSLOT_BYTES      4 /* 4 byte subslot is nicer for our 32 bit machine to unpack.. */
-    #else
-        #define HS_STREAM_FORMAT_INPUT_2_SUBSLOT_BYTES      (HS_STREAM_FORMAT_INPUT_2_RESOLUTION_BITS/8)
-    #endif
+    #define HS_STREAM_FORMAT_INPUT_2_SUBSLOT_BYTES      (HS_STREAM_FORMAT_INPUT_2_RESOLUTION_BITS/8)
 #endif
 
 #ifndef HS_STREAM_FORMAT_INPUT_3_SUBSLOT_BYTES
-     #if (HS_STREAM_FORMAT_INPUT_3_RESOLUTION_BITS == 24)
-        #define HS_STREAM_FORMAT_INPUT_3_SUBSLOT_BYTES      4 /* 4 byte subslot is nicer for our 32 bit machine to unpack.. */
-    #else
-        #define HS_STREAM_FORMAT_INPUT_3_SUBSLOT_BYTES      (HS_STREAM_FORMAT_INPUT_3_RESOLUTION_BITS/8)
-    #endif
+    #define HS_STREAM_FORMAT_INPUT_3_SUBSLOT_BYTES      (HS_STREAM_FORMAT_INPUT_3_RESOLUTION_BITS/8)
 #endif
 
 /**
