@@ -210,9 +210,57 @@ typedef struct
 #if (NUM_USB_CHAN_OUT > 31)
     STR_TABLE_ENTRY(outputChanStr_32);
 #endif
+#if (NUM_USB_CHAN_OUT > 33-1)
+    STR_TABLE_ENTRY(outputChanStr_33);
+#endif
+#if (NUM_USB_CHAN_OUT > 34-1)
+    STR_TABLE_ENTRY(outputChanStr_34);
+#endif
+#if (NUM_USB_CHAN_OUT > 35-1)
+    STR_TABLE_ENTRY(outputChanStr_35);
+#endif
+#if (NUM_USB_CHAN_OUT > 36-1)
+    STR_TABLE_ENTRY(outputChanStr_36);
+#endif
+#if (NUM_USB_CHAN_OUT > 37-1)
+    STR_TABLE_ENTRY(outputChanStr_37);
+#endif
+#if (NUM_USB_CHAN_OUT > 38-1)
+    STR_TABLE_ENTRY(outputChanStr_38);
+#endif
+#if (NUM_USB_CHAN_OUT > 39-1)
+    STR_TABLE_ENTRY(outputChanStr_39);
+#endif
+#if (NUM_USB_CHAN_OUT > 40-1)
+    STR_TABLE_ENTRY(outputChanStr_40);
+#endif
+#if (NUM_USB_CHAN_OUT > 41-1)
+    STR_TABLE_ENTRY(outputChanStr_41);
+#endif
+#if (NUM_USB_CHAN_OUT > 42-1)
+    STR_TABLE_ENTRY(outputChanStr_42);
+#endif
+#if (NUM_USB_CHAN_OUT > 43-1)
+    STR_TABLE_ENTRY(outputChanStr_43);
+#endif
+#if (NUM_USB_CHAN_OUT > 44-1)
+    STR_TABLE_ENTRY(outputChanStr_44);
+#endif
+#if (NUM_USB_CHAN_OUT > 45-1)
+    STR_TABLE_ENTRY(outputChanStr_45);
+#endif
+#if (NUM_USB_CHAN_OUT > 46-1)
+    STR_TABLE_ENTRY(outputChanStr_46);
+#endif
+#if (NUM_USB_CHAN_OUT > 47-1)
+    STR_TABLE_ENTRY(outputChanStr_47);
+#endif
+#if (NUM_USB_CHAN_OUT > 48-1)
+    STR_TABLE_ENTRY(outputChanStr_48);
+#endif
 
-#if (NUM_USB_CHAN_OUT > 32)
-#error NUM_USB_CHAN_OUT > 32
+#if (NUM_USB_CHAN_OUT > 48)
+#error NUM_USB_CHAN_OUT > 48
 #endif
 
 #if (NUM_USB_CHAN_IN > 0)
@@ -311,9 +359,57 @@ typedef struct
 #if (NUM_USB_CHAN_IN > 31)
     STR_TABLE_ENTRY(inputChanStr_32);
 #endif
+#if (NUM_USB_CHAN_IN > 33-1)
+    STR_TABLE_ENTRY(inputChanStr_33);
+#endif
+#if (NUM_USB_CHAN_IN > 34-1)
+    STR_TABLE_ENTRY(inputChanStr_34);
+#endif
+#if (NUM_USB_CHAN_IN > 35-1)
+    STR_TABLE_ENTRY(inputChanStr_35);
+#endif
+#if (NUM_USB_CHAN_IN > 36-1)
+    STR_TABLE_ENTRY(inputChanStr_36);
+#endif
+#if (NUM_USB_CHAN_IN > 37-1)
+    STR_TABLE_ENTRY(inputChanStr_37);
+#endif
+#if (NUM_USB_CHAN_IN > 38-1)
+    STR_TABLE_ENTRY(inputChanStr_38);
+#endif
+#if (NUM_USB_CHAN_IN > 39-1)
+    STR_TABLE_ENTRY(inputChanStr_39);
+#endif
+#if (NUM_USB_CHAN_IN > 40-1)
+    STR_TABLE_ENTRY(inputChanStr_40);
+#endif
+#if (NUM_USB_CHAN_IN > 41-1)
+    STR_TABLE_ENTRY(inputChanStr_41);
+#endif
+#if (NUM_USB_CHAN_IN > 42-1)
+    STR_TABLE_ENTRY(inputChanStr_42);
+#endif
+#if (NUM_USB_CHAN_IN > 43-1)
+    STR_TABLE_ENTRY(inputChanStr_43);
+#endif
+#if (NUM_USB_CHAN_IN > 44-1)
+    STR_TABLE_ENTRY(inputChanStr_44);
+#endif
+#if (NUM_USB_CHAN_IN > 45-1)
+    STR_TABLE_ENTRY(inputChanStr_45);
+#endif
+#if (NUM_USB_CHAN_IN > 46-1)
+    STR_TABLE_ENTRY(inputChanStr_46);
+#endif
+#if (NUM_USB_CHAN_IN > 47-1)
+    STR_TABLE_ENTRY(inputChanStr_47);
+#endif
+#if (NUM_USB_CHAN_IN > 48-1)
+    STR_TABLE_ENTRY(inputChanStr_48);
+#endif
 
-#if (NUM_USB_CHAN_IN > 32)
-#error NUM_USB_CHAN_IN > 32
+#if (NUM_USB_CHAN_IN > 48)
+#error NUM_USB_CHAN_IN > 48
 #endif
 
 #if (MIXER) && (MAX_MIX_COUNT > 0)
@@ -390,12 +486,12 @@ StringDescTable_t g_strTable =
 
     #include "chanstrings.h"
 
-#if (NUM_USB_CHAN_OUT > 32)
-#error NUM_USB_CHAN_OUT > 32
+#if (NUM_USB_CHAN_OUT > 48)
+#error NUM_USB_CHAN_OUT > 48
 #endif
 
-#if (NUM_USB_CHAN_IN > 32)
-#error NUM_USB_CHAN_IN > 32
+#if (NUM_USB_CHAN_IN > 48)
+#error NUM_USB_CHAN_IN > 48
 #endif
 
 #if (MIXER) && (MAX_MIX_COUNT > 0)
@@ -1139,9 +1235,57 @@ USB_Config_Descriptor_Audio2_t cfgDesc_Audio2=
 #if (NUM_USB_CHAN_OUT > 31)
                 0x0000000F,         /* bmaControls(32) */
 #endif
+#if (NUM_USB_CHAN_OUT > 33-1)
+                0x0000000F,         /* bmaControls(33) */
+#endif
+#if (NUM_USB_CHAN_OUT > 34-1)
+                0x0000000F,         /* bmaControls(34) */
+#endif
+#if (NUM_USB_CHAN_OUT > 35-1)
+                0x0000000F,         /* bmaControls(35) */
+#endif
+#if (NUM_USB_CHAN_OUT > 36-1)
+                0x0000000F,         /* bmaControls(36) */
+#endif
+#if (NUM_USB_CHAN_OUT > 37-1)
+                0x0000000F,         /* bmaControls(37) */
+#endif
+#if (NUM_USB_CHAN_OUT > 38-1)
+                0x0000000F,         /* bmaControls(38) */
+#endif
+#if (NUM_USB_CHAN_OUT > 39-1)
+                0x0000000F,         /* bmaControls(39) */
+#endif
+#if (NUM_USB_CHAN_OUT > 40-1)
+                0x0000000F,         /* bmaControls(40) */
+#endif
+#if (NUM_USB_CHAN_OUT > 41-1)
+                0x0000000F,         /* bmaControls(41) */
+#endif
+#if (NUM_USB_CHAN_OUT > 42-1)
+                0x0000000F,         /* bmaControls(42) */
+#endif
+#if (NUM_USB_CHAN_OUT > 43-1)
+                0x0000000F,         /* bmaControls(43) */
+#endif
+#if (NUM_USB_CHAN_OUT > 44-1)
+                0x0000000F,         /* bmaControls(44) */
+#endif
+#if (NUM_USB_CHAN_OUT > 45-1)
+                0x0000000F,         /* bmaControls(45) */
+#endif
+#if (NUM_USB_CHAN_OUT > 46-1)
+                0x0000000F,         /* bmaControls(46) */
+#endif
+#if (NUM_USB_CHAN_OUT > 47-1)
+                0x0000000F,         /* bmaControls(47) */
+#endif
+#if (NUM_USB_CHAN_OUT > 48-1)
+                0x0000000F,         /* bmaControls(48) */
+#endif
 
-#if (NUM_USB_CHAN_OUT > 32)
-#error NUM_USB_CHAN_OUT > 32
+#if (NUM_USB_CHAN_OUT > 48)
+#error NUM_USB_CHAN_OUT > 48
 #endif
             },
             0,                      /* 60 iFeature */
@@ -1315,8 +1459,57 @@ USB_Config_Descriptor_Audio2_t cfgDesc_Audio2=
 #if (NUM_USB_CHAN_IN > 31)
                 0x0000000F,               /* bmaControls(32) */
 #endif
-#if (NUM_USB_CHAN_IN > 32)
-#error NUM_USB_CHAN_IN > 32
+#if (NUM_USB_CHAN_IN > 33-1)
+                0x0000000F,               /* bmaControls(33) */
+#endif
+#if (NUM_USB_CHAN_IN > 34-1)
+                0x0000000F,               /* bmaControls(34) */
+#endif
+#if (NUM_USB_CHAN_IN > 35-1)
+                0x0000000F,               /* bmaControls(35) */
+#endif
+#if (NUM_USB_CHAN_IN > 36-1)
+                0x0000000F,               /* bmaControls(36) */
+#endif
+#if (NUM_USB_CHAN_IN > 37-1)
+                0x0000000F,               /* bmaControls(37) */
+#endif
+#if (NUM_USB_CHAN_IN > 38-1)
+                0x0000000F,               /* bmaControls(38) */
+#endif
+#if (NUM_USB_CHAN_IN > 39-1)
+                0x0000000F,               /* bmaControls(39) */
+#endif
+#if (NUM_USB_CHAN_IN > 40-1)
+                0x0000000F,               /* bmaControls(40) */
+#endif
+#if (NUM_USB_CHAN_IN > 41-1)
+                0x0000000F,               /* bmaControls(41) */
+#endif
+#if (NUM_USB_CHAN_IN > 42-1)
+                0x0000000F,               /* bmaControls(42) */
+#endif
+#if (NUM_USB_CHAN_IN > 43-1)
+                0x0000000F,               /* bmaControls(43) */
+#endif
+#if (NUM_USB_CHAN_IN > 44-1)
+                0x0000000F,               /* bmaControls(44) */
+#endif
+#if (NUM_USB_CHAN_IN > 45-1)
+                0x0000000F,               /* bmaControls(45) */
+#endif
+#if (NUM_USB_CHAN_IN > 46-1)
+                0x0000000F,               /* bmaControls(46) */
+#endif
+#if (NUM_USB_CHAN_IN > 47-1)
+                0x0000000F,               /* bmaControls(47) */
+#endif
+#if (NUM_USB_CHAN_IN > 48-1)
+                0x0000000F,               /* bmaControls(48) */
+#endif
+
+#if (NUM_USB_CHAN_IN > 48)
+#error NUM_USB_CHAN_IN > 48
 #endif
             },
             0,                            /* 60 iFeature */
