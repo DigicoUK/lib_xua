@@ -1,4 +1,4 @@
-// Copyright 2017-2024 XMOS LIMITED.
+// Copyright 2017-2025 XMOS LIMITED.
 // This Software is subject to the terms of the XMOS Public Licence: Version 1.
 
 /* A very simple *example* of a USB audio application (and as such is un-verified for production)
@@ -96,7 +96,7 @@ int main()
 
         /* Endpoint 0 core from lib_xua */
         /* Note, since we are not using many features we pass in null for quite a few params.. */
-        on tile[0]: XUA_Endpoint0(c_ep_out[0], c_ep_in[0], c_aud_ctl, null, null, null, null);
+        on tile[0]: XUA_Endpoint0(c_ep_out[0], c_ep_in[0], c_aud_ctl, null, null, null);
 
         /* Buffering cores - handles audio data to/from EP's and gives/gets data to/from the audio I/O core */
         /* Note, this spawns two cores */

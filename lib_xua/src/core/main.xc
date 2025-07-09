@@ -1,4 +1,4 @@
-// Copyright 2012-2024 XMOS LIMITED.
+// Copyright 2012-2025 XMOS LIMITED.
 // This Software is subject to the terms of the XMOS Public Licence: Version 1.
 
 #include "xua.h"                          /* Device specific defines */
@@ -24,11 +24,6 @@
 #endif
 
 #include "uac_hwresources.h"
-
-#ifdef IAP
-#include "i2c_shared.h"
-#include "iap.h"
-#endif
 
 #if (XUA_SPDIF_RX_EN || XUA_SPDIF_TX_EN)
 #include "spdif.h"                     /* From lib_spdif */
@@ -194,19 +189,10 @@ on tile[XUD_TILE] : clock clk_audio_mclk_usb                = CLKBLK_MCLK;      
 
 on tile[AUDIO_IO_TILE] : clock clk_audio_bclk               = CLKBLK_I2S_BIT;    /* Bit clock */
 
-#ifdef IAP
-/* I2C ports - in a struct for use with module_i2c_shared & module_i2c_simple/module_i2c_single_port */
-#ifdef PORT_I2C
-on tile [IAP_TILE] : struct r_i2c r_i2c = {PORT_I2C};
-#else
-on tile [IAP_TILE] : struct r_i2c r_i2c = {PORT_I2C_SCL, PORT_I2C_SDA};
-#endif
-#endif
-
 #if XUA_USB_EN
 /* Endpoint type tables for XUD */
 XUD_EpType epTypeTableOut[ENDPOINT_COUNT_OUT] = { XUD_EPTYPE_CTL | XUD_STATUS_ENABLE,
-#if (NUM_USB_CHAN_IN > 0)
+#if (NUM_USB_CHAN_OUT > 0)
                                             XUD_EPTYPE_ISO,    /* Audio */
 #endif
 #ifdef MIDI
@@ -214,12 +200,6 @@ XUD_EpType epTypeTableOut[ENDPOINT_COUNT_OUT] = { XUD_EPTYPE_CTL | XUD_STATUS_EN
 #endif
 #if HID_OUT_REQUIRED
                                             XUD_EPTYPE_INT,
-#endif
-#ifdef IAP
-                                            XUD_EPTYPE_BUL,    /* iAP */
-#ifdef IAP_EA_NATIVE_TRANS
-                                            XUD_EPTYPE_BUL,    /* EA Native Transport */
-#endif
 #endif
                                         };
 
@@ -238,15 +218,6 @@ XUD_EpType epTypeTableIn[ENDPOINT_COUNT_IN] = { XUD_EPTYPE_CTL | XUD_STATUS_ENAB
 #endif
 #if XUA_OR_STATIC_HID_ENABLED
                                             XUD_EPTYPE_INT,
-#endif
-#ifdef IAP
-                                            XUD_EPTYPE_BUL | XUD_STATUS_ENABLE,
-#ifdef IAP_INT_EP
-                                            XUD_EPTYPE_BUL | XUD_STATUS_ENABLE,
-#endif
-#ifdef IAP_EA_NATIVE_TRANS
-                                            XUD_EPTYPE_BUL | XUD_STATUS_ENABLE,
-#endif
 #endif
                                         };
 #endif /* XUA_USB_EN */
@@ -411,6 +382,10 @@ void usb_audio_io(chanend ?c_aud_in,
     } // par
 }
 
+#ifndef USER_MAIN_GLOBALS
+#define USER_MAIN_GLOBALS
+#endif
+
 #ifndef USER_MAIN_DECLARATIONS
 #define USER_MAIN_DECLARATIONS
 #endif
@@ -419,6 +394,12 @@ void usb_audio_io(chanend ?c_aud_in,
 #define USER_MAIN_CORES
 #endif
 
+
+/* USER_MAIN_GLOBALS can be defined either via xua_conf.h or by user_main_globals.h */
+#ifdef __user_main_globals_h_exists__
+    #include "user_main_globals.h"
+#endif
+        USER_MAIN_GLOBALS
 
 /* Main for USB Audio Applications */
 int main()
@@ -431,12 +412,6 @@ int main()
 
 #ifdef MIDI
     chan c_midi;
-#endif
-#ifdef IAP
-    chan c_iap;
-#ifdef IAP_EA_NATIVE_TRANS
-    chan c_ea_data;
-#endif
 #endif
 
 #if (MIXER)
@@ -498,16 +473,20 @@ int main()
 #define c_mix_ctl null
 #endif
 
-#ifdef IAP_EA_NATIVE_TRANS
-    chan c_EANativeTransport_ctrl;
-#else
-#define c_EANativeTransport_ctrl null
+/* USER_MAIN_DECLARATIONS can be defined either via xua_conf.h or by user_main_declarations.h */
+#ifdef __user_main_declarations_h_exists__
+    #include "user_main_declarations.h"
 #endif
 
     USER_MAIN_DECLARATIONS
 
     par
     {
+
+/* USER_MAIN_CORES can be defined either via xua_conf.h or by user_main_cores.h */
+#ifdef __user_main_cores_h_exists__
+    #include "user_main_cores.h"
+#endif
         USER_MAIN_CORES
 
 #if (((XUA_SYNCMODE == XUA_SYNCMODE_SYNC  && !XUA_USE_SW_PLL) || XUA_SPDIF_RX_EN || XUA_ADAT_RX_EN))
@@ -529,14 +508,11 @@ int main()
 #ifdef XUD_PRIORITY_HIGH
                 set_core_high_priority_on();
 #endif
-                /* Run UAC2.0 at high-speed, UAC1.0 at full-speed */
-                unsigned usbSpeed = (AUDIO_CLASS == 2) ? XUD_SPEED_HS : XUD_SPEED_FS;
-
                 unsigned xudPwrCfg = (XUA_POWERMODE == XUA_POWERMODE_SELF) ? XUD_PWR_SELF : XUD_PWR_BUS;
 
                 /* USB interface core */
                 XUD_Main(c_xud_out, ENDPOINT_COUNT_OUT, c_xud_in, ENDPOINT_COUNT_IN,
-                         c_sof, epTypeTableOut, epTypeTableIn, usbSpeed, xudPwrCfg);
+                         c_sof, epTypeTableOut, epTypeTableIn, XUA_USB_BUS_SPEED, xudPwrCfg);
             }
 
 #if (NUM_USB_CHAN_OUT > 0) || (NUM_USB_CHAN_IN > 0) || XUA_HID_ENABLED || defined(MIDI)
@@ -552,10 +528,13 @@ int main()
                 set_port_clock(p_for_mclk_count, clk_audio_mclk_usb);
                 start_clock(clk_audio_mclk_usb);
 #else
+                /* AUDIO_IO_TILE == XUD_TILE */
                 /* Clock port from same clock-block as I2S */
                 /* TODO remove asm() */
                 asm("ldw %0, dp[clk_audio_mclk]":"=r"(x));
                 asm("setclk res[%0], %1"::"r"(p_for_mclk_count), "r"(x));
+                /* This clock block is started in audiohub in case we first need to connect other logic
+                   e.g. digital Tx to it before starting */
 #endif
                 /* Endpoint & audio buffering cores - buffers all EP's other than 0 */
                 XUA_Buffer(
@@ -599,7 +578,7 @@ int main()
             /* Endpoint 0 Core */
             {
                 thread_speed();
-                XUA_Endpoint0( c_xud_out[0], c_xud_in[0], c_aud_ctl, c_mix_ctl, c_clk_ctl, c_EANativeTransport_ctrl, dfuInterface VENDOR_REQUESTS_PARAMS_);
+                XUA_Endpoint0( c_xud_out[0], c_xud_in[0], c_aud_ctl, c_mix_ctl, c_clk_ctl, dfuInterface VENDOR_REQUESTS_PARAMS_);
             }
 
 #endif /* XUA_USB_EN */
@@ -613,7 +592,7 @@ int main()
         {
             /* Audio I/O task, includes mixing etc */
             usb_audio_io(
-#if (NUM_USB_CHAN_OUT > 0) || (NUM_USB_CHAN_IN > 0)
+#if (NUM_USB_CHAN_OUT > 0) || (NUM_USB_CHAN_IN > 0) || XUA_HID_ENABLED || defined(MIDI)
                 /* Connect audio system to XUA_Buffer(); */
                 c_mix_out
 #else
@@ -655,29 +634,13 @@ int main()
         }
 #endif
 
-#if defined(MIDI) && defined(IAP) && (IAP_TILE == MIDI_TILE)
-        /* MIDI and IAP share a core */
-        on tile[IAP_TILE]:
-        {
-            thread_speed();
-            usb_midi(p_midi_rx, p_midi_tx, clk_midi, c_midi, 0, c_iap, null, null, null);
-        }
-#else
-#if defined(MIDI)
+#ifdef MIDI
         /* MIDI core */
         on tile[MIDI_TILE]:
         {
             thread_speed();
             usb_midi(p_midi_rx, p_midi_tx, clk_midi, c_midi, 0);
         }
-#endif
-#if defined(IAP)
-        on tile[IAP_TILE]:
-        {
-            thread_speed();
-            iAP(c_iap, null, null, null);
-        }
-#endif
 #endif
 
 #if (XUA_SPDIF_RX_EN)
@@ -695,9 +658,9 @@ int main()
 
             while (1)
             {
-				adatReceiver48000(p_adat_rx, c_adat_rx);
-				adatReceiver44100(p_adat_rx, c_adat_rx);
-			}
+                adatReceiver48000(p_adat_rx, c_adat_rx);
+                adatReceiver44100(p_adat_rx, c_adat_rx);
+            }
         }
 #endif
 
@@ -714,12 +677,11 @@ int main()
         /* PDM Mics running on a separate to AudioHub */
         on stdcore[PDM_TILE]:
         {
-             mic_array_task(c_mic_pcm);
+             mic_array_task(c_pdm_pcm);
         }
 #endif /*XUA_NUM_PDM_MICS > 0*/
     }
 
     return 0;
 }
-
-#endif
+#endif // ndef EXCLUDE_USB_AUDIO_MAIN

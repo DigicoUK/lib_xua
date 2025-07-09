@@ -1,4 +1,4 @@
-// Copyright 2016-2024 XMOS LIMITED.
+// Copyright 2016-2025 XMOS LIMITED.
 // This Software is subject to the terms of the XMOS Public Licence: Version 1.
 #ifdef HARDWARE
 
@@ -144,11 +144,6 @@ void AudioHwInit(chanend ?c_codec)
         i2c_master_single_port(i2c, 1, p_i2c, 10, 0, 1, 0);
         PllInit(i2c[0]);
     }
-#endif
-
-#ifdef IAP
-    /* Enable VBUS output */
-    set_gpio(P_GPIO_VBUS_EN, 1);
 #endif
 }
 

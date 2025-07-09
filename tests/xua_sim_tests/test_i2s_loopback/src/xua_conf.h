@@ -1,11 +1,13 @@
-// Copyright 2016-2024 XMOS LIMITED.
+// Copyright 2016-2025 XMOS LIMITED.
 // This Software is subject to the terms of the XMOS Public Licence: Version 1.
 #ifndef _XUA_CONF_H_
 #define _XUA_CONF_H_
 
 #define EXCLUDE_USB_AUDIO_MAIN
 #define XUA_NUM_PDM_MICS 0
+#ifndef XUD_TILE
 #define XUD_TILE 1
+#endif
 #define AUDIO_IO_TILE 0
 #define MIXER 0
 

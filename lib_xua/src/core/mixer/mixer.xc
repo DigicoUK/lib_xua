@@ -1,4 +1,4 @@
-// Copyright 2011-2024 XMOS LIMITED.
+// Copyright 2011-2025 XMOS LIMITED.
 // This Software is subject to the terms of the XMOS Public Licence: Version 1.
 #define XASSERT_UNIT MIXER
 #include "xassert.h"
@@ -538,7 +538,7 @@ static void mixer1(chanend c_host, chanend c_mix_ctl, chanend ?c_mixer2, chanend
 
             switch(command)
             {
-                case SET_SAMPLE_FREQ:
+                case XUA_AUDCTL_SET_SAMPLE_FREQ:
                     sampFreq = inuint(c_host);
                     mixer1_mix2_flag = sampFreq > 96000;
 
@@ -547,14 +547,18 @@ static void mixer1(chanend c_host, chanend c_mix_ctl, chanend ?c_mixer2, chanend
                     outuint(c_audio, sampFreq);
                     break;
 
-                case SET_STREAM_FORMAT_OUT:
-                case SET_STREAM_FORMAT_IN:
-                    /* Inform mixer2 (or audio()) about format change */
+                case XUA_AUD_SET_AUDIO_START:
+                    /* Inform mixer2 (or audio()) about change */
                     outct(c_audio, command);
                     outuint(c_audio, inuint(c_host));
                     outuint(c_audio, inuint(c_host));
                     break;
 
+                case XUA_AUD_SET_AUDIO_STOP:
+                    /* Pass on command */
+                    outct(c_audio, command);
+                    break;
+                    
                 default:
                     break;
             }

@@ -1,4 +1,4 @@
-// Copyright 2013-2024 XMOS LIMITED.
+// Copyright 2013-2025 XMOS LIMITED.
 // This Software is subject to the terms of the XMOS Public Licence: Version 1.
 
 #include <xs1.h>
@@ -41,10 +41,8 @@ void ConfigAudioPortsWrapper(
     port p_adc[], int numPortsAdc,
 #endif
 
-#if (I2S_CHANS_DAC != 0) || (I2S_CHANS_ADC != 0)
     port p_lrclk,
     port p_bclk,
-#endif
     NULLABLE_RESOURCE(in_port_t,  p_mclk_in),
     clock clk_audio_bclk, unsigned int divide, unsigned curSamFreq)
 {
@@ -57,10 +55,8 @@ void ConfigAudioPortsWrapper(
             p_adc,
             numPortsAdc,
 #endif
-#if (I2S_CHANS_DAC != 0) || (I2S_CHANS_ADC != 0)
             p_lrclk,
             p_bclk,
-#endif
             p_mclk_in, clk_audio_bclk, divide, curSamFreq);
 }
 

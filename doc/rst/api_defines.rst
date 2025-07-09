@@ -44,8 +44,9 @@ Audio Class
 -----------
 
 .. doxygendefine:: AUDIO_CLASS
-.. doxygendefine:: AUDIO_CLASS_FALLBACK
-.. doxygendefine:: FULL_SPEED_AUDIO_2
+.. doxygendefine:: XUA_AUDIO_CLASS_HS
+.. doxygendefine:: XUA_AUDIO_CLASS_FS
+
 
 Feature configuration
 ---------------------
@@ -167,4 +168,5 @@ Power
 -----
 
 .. doxygendefine:: XUA_POWERMODE
+.. doxygendefine:: XUA_CHAN_BUFF_CTRL
 
