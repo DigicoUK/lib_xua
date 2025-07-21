@@ -55,6 +55,8 @@ unsigned samplesOut[XUA_MAX(NUM_USB_CHAN_OUT, I2S_CHANS_DAC)];
 
 unsigned samplesIn[2][XUA_MAX(NUM_USB_CHAN_IN, IN_CHAN_COUNT)];
 
+unsigned frame_start_timestamp;
+
 #if (XUA_ADAT_TX_EN)
 extern buffered out port:32 p_adat_tx;
 #endif
@@ -270,9 +272,9 @@ unsigned static AudioHub_MainLoop(chanend ?c_aud, chanend ?c_spd_out
         if ((I2S_CHANS_DAC > 0 || I2S_CHANS_ADC > 0))
         {
 #if CODEC_MASTER
-            InitPorts_slave(p_lrclk, p_bclk, p_i2s_dac, p_i2s_adc);
+            frame_start_timestamp = InitPorts_slave(p_lrclk, p_bclk, p_i2s_dac, p_i2s_adc);
 #else
-            InitPorts_master(p_lrclk, p_bclk, p_i2s_dac, p_i2s_adc);
+            frame_start_timestamp = InitPorts_master(p_lrclk, p_bclk, p_i2s_dac, p_i2s_adc);
 #endif
         }
 
@@ -287,6 +289,11 @@ unsigned static AudioHub_MainLoop(chanend ?c_aud, chanend ?c_spd_out
             else
 #endif
             {
+                /* We delay the transfer of TDM data by n slots to give DoSampleTransfer more time to complete */
+                //frame_start_timestamp += 32 * 2;
+                //partout_timed(p_i2s_dac[0], 31, 0, frame_start_timestamp);
+                //sync(p_i2s_dac[0]); // +1 clock cycle delay
+
 #if (I2S_CHANS_ADC != 0)
 #if (AUD_TO_USB_RATIO > 1)
                 if (0 == audioToUsbRatioCounter)
@@ -496,9 +503,9 @@ unsigned static AudioHub_MainLoop(chanend ?c_aud, chanend ?c_spd_out
                     }
 #endif /* (AUD_TO_USB_RATIO > 1) */
                     if(XUA_I2S_N_BITS == 32)
-                        p_i2s_dac[index++] <: bitrev(samplesOut[frameCount + i]);
+                        p_i2s_dac[index++] <: bitrev(samplesOut[frameCount + i]) @ frame_start_timestamp; // technically only required for last in loop
                     else
-                        partout(p_i2s_dac[index++], XUA_I2S_N_BITS, bitrev(samplesOut[frameCount + i]));
+                        frame_start_timestamp = partout_timestamped(p_i2s_dac[index++], XUA_I2S_N_BITS, bitrev(samplesOut[frameCount + i]));
                 }
 #endif // (I2S_CHANS_DAC != 0)
 
