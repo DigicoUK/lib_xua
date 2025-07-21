@@ -64,9 +64,9 @@ extern clock    clk_mst_spd;
 #endif
 
 #if CODEC_MASTER
-void InitPorts_slave
+unsigned InitPorts_slave
 #else
-void InitPorts_master
+unsigned InitPorts_master
 #endif
 (buffered _XUA_CLK_DIR port:32 p_lrclk, buffered _XUA_CLK_DIR port:32 p_bclk, buffered out port:32 (&?p_i2s_dac)[I2S_WIRES_DAC],
     buffered in port:32  (&?p_i2s_adc)[I2S_WIRES_ADC]);
